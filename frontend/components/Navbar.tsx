@@ -7,9 +7,9 @@ import { useStore } from '@nanostores/react';
 
 const Navbar = () => {
 
-const sessionData = authClient.useSession() as any;
-const session = useStore(sessionData) as any;
-const data = session?.data;
+const sessionData = authClient.useSession() as any; 
+const session = useStore(sessionData) as any; 
+const data = session?.data; 
 const isPending = session?.isPending;
   
   return (
