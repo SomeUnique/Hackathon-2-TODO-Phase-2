@@ -81,7 +81,7 @@ export default function DashboardPage() {
 
   const handleDeleteTask = async (taskId: string) => {
     try {
-      await apiClient.deleteTask(Number(taskId));
+      await apiClient.deleteTask(Number(taskId))
       setTasks(tasks.filter(task => task.id !== taskId));
       toast.success('Task deleted successfully!');
     } catch (error: any) {
@@ -347,7 +347,7 @@ export default function DashboardPage() {
                                 </p>
                               )}
                               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{/* task.created_at use karein aur check karein ke date valid hai */}
-                                Created: {task.created_at ? new Date(task.created_at).toLocaleDateString() : 'No Date'}
+                                Created: {task.created_at ? new Date(task.created_at).toLocaleDateString() : 'N/A'}
                                 </p>
                             </div>
                             

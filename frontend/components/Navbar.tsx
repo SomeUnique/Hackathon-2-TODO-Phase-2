@@ -6,9 +6,12 @@ import { authClient } from '@/lib/auth-client';
 import { useStore } from '@nanostores/react';
 
 const Navbar = () => {
-  const sessionStore = authClient.useSession;
-  const { data: session, isPending } = useStore(sessionStore);
 
+const sessionData = authClient.useSession() as any;
+const session = useStore(sessionData) as any;
+const data = session?.data;
+const isPending = session?.isPending;
+  
   return (
     <nav className="bg-gray-800 dark:bg-gray-900 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
